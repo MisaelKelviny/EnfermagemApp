@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,18 +8,10 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {
-    this.changeSearchBar();
+  constructor(public router: Router) {
   }
 
-  changeSearchBar(){
-    // var sc = document.getElementsByTagName("ion-searchbar");
-    // console.log(sc);
-    
-    var sc = document.getElementsByClassName("sc-ion-searchbar-md");
-    console.log(sc.item(0));
-    console.log(sc);
-    
-    
+  sifilisPage(){
+    this.router.navigate(['/sifilis-page']);
   }
 }
