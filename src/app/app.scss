@@ -46,3 +46,33 @@ ion-content {
   position: relative;
   justify-content: center;
 }
+
+.toolbar-background{
+  --background: var(--ion-toolbar-background,var(--ion-background-color,#d66)) !important;
+}
+
+.transparent-background{
+  --background: transparent !important;
+}
+
+.headerImage{
+  top: 0;
+}
+
+.backButton{
+  --color: #F840CE;
+}
+
+.pageContainer{
+  position: relative;
+  top: 120px;
+}
+
+.cardImage{
+  width: 70%;
+  height: 50%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+}

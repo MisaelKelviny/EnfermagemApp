@@ -1,0 +1,47 @@
+<ion-header no-border #headerTransparent>
+  <ion-buttons slot="start">
+    <ion-back-button class="backButton" defaultHref="home"></ion-back-button>
+  </ion-buttons>
+</ion-header>
+
+<ion-content (ionScroll)="isScroll($event)" scrollEvents="true">
+  <img class="headerImage" src="../../assets/img/img2.jpg">
+
+  <div padding>
+    <ion-text class="title">Fases da Sífilis</ion-text>
+
+    <p class="text">
+      É importante saber que existem diferentes fases de evolução da Sífilis. São elas: primária, secundária e
+      terciária.
+    </p>
+
+    <div class="cardImage">
+      <img src="../../assets/img/img3.jpg">
+    </div>
+    <p class="text">
+      Na fase primária surgem feridas no local de infecção, que duram de duas a três semanas. São indolores, ou seja,
+      não causam nenhum desconforto, o que leva a falta de atenção da pessoa infectada.
+    </p>
+
+    <div class="cardImage">
+      <img src="../../assets/img/img4.jpg">
+    </div>
+    <p class="text">
+      Na fase secundária as feridas já desapareceram e depois de seis a oito semanas, a pessoa apresenta mal estar,
+      febre baixa, dor de cabeça e manchas pelo corpo.
+    </p>
+
+    <p class="text">
+      Na fase terciária aparecem feridas maiores na pele, boca ou nariz, problemas em diversos órgãos, convulsões, perda
+      auditiva, entre outros. Esse quadro surge quando a doença não é tratada há mais de 10 anos. A fase em que os
+      sintomas não aparecem e estão adormecidos é chamada de Latente.
+    </p>
+
+    <div class="finishButton">
+      <ion-button>
+        Terminei
+      </ion-button>
+    </div>
+  </div>
+
+</ion-content>

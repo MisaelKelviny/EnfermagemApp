@@ -14,4 +14,8 @@ export class HomePage {
   sifilisPage(){
     this.router.navigate(['/sifilis-page']);
   }
+
+  fasesPage(){
+    this.router.navigate(['/fases-page']);
+  }
 }
