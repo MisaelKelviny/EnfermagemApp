@@ -1,12 +1,11 @@
-import { Component, OnInit, ViewChild, Renderer2 } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
-  selector: 'app-sifilis-page',
-  templateUrl: './sifilis-page.page.html',
-  styleUrls: ['./sifilis-page.page.scss'],
+  selector: 'app-congenita-page',
+  templateUrl: './congenita-page.page.html',
+  styleUrls: ['./congenita-page.page.scss'],
 })
-export class SifilisPagePage implements OnInit {
-
+export class CongenitaPagePage implements OnInit {
   @ViewChild('headerTransparent') header: any;
   @ViewChild('title') title: any;
   constructor() { }

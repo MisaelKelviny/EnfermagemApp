@@ -1,11 +1,8 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
-    "outDir": "../out-tsc/spec",
-    "types": [
-      "jasmine",
-      "node"
-    ]
+    "experimentalDecorators": true,
+    "allowJs": true
   },
   "files": [
     "test.ts",
