@@ -93,3 +93,75 @@ div.headerImage img {
   background-repeat: no-repeat;
   margin: 0 auto;
 }
+
+.cardContainer {
+}
+
+.cardMenu {
+  background: #ffffff;
+  border: 1px solid rgba(210, 74, 125, 0.37);
+  box-sizing: border-box;
+  box-shadow: 0px 8px 16px rgba(226, 119, 159, 0.26);
+  border-radius: 10px;
+  height: 150px;
+  margin: 10px;
+}
+
+.cardTitle {
+  font-family: Poppins SemiBold;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  display: flex;
+  align-items: center;
+  color: #d24a7d;
+  margin: 0;
+  width: 200px;
+  padding: 0;
+}
+
+.cardText {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 20px;
+  color: #e2779f;
+  margin: 0;
+  padding: 0;
+}
+
+.menuImage {
+  position: absolute;
+    top: -6px;
+    right: -10px;
+    width: 100%;
+    justify-content: end;
+    display: grid
+}
+
+.menuTitle {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  /* identical to box height */
+
+  color: #4d4d4d;
+}
+
+.menuSpanTitle {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+  /* identical to box height */
+
+  color: #d24a7d;
+}
+
+.my-1 {
+  margin: 10px;
+}
