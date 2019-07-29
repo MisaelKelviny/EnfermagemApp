@@ -1,0 +1,54 @@
+<ion-header no-border #headerTransparent>
+  <ion-buttons slot="start">
+    <ion-back-button class="backButton" defaultHref="home"></ion-back-button>
+  </ion-buttons>
+</ion-header>
+
+
+<ion-content (ionScroll)="isScroll($event)" scrollEvents="true">
+  <div class="headerImage">
+    <img src="../../assets/img/gravida98983.jpg">
+  </div>
+
+  <div padding>
+    <ion-text #title class="title">Sífilis Congênita</ion-text>
+
+    <p class="text">
+      Uma doença congênita é aquela adquirida durante a gestação, em qualquer momento da gravidez. Como outras
+      infecções, a Sífilis também pode ser transmitida de mãe para filho, sendo chamada de Sífilis congênita.
+    </p>
+    <div class="cardImage">
+      <img src="../../assets/img/fasePrecoce.JPG">
+    </div>
+
+    <p class="text">
+      A gestante que se contamina com a Sífilis passa para o feto através da placenta na fase primária ou secundária, já
+      as fases terciária e latente não são transmissíveis.
+
+      As manifestações da sífilis congênita podem ser precoces, ou seja, do nascimento até dois anos de idade, ou
+      tardias, após os dois anos.
+    </p>
+    <div class="cardImage">
+      <img src="../../assets/img/fasePrecoce2.JPG">
+    </div>
+
+    <p class="text">
+      Na fase precoce da doença é comum aparecer os sintomas antes de completar 3 meses de idade, sendo eles: lesões no
+      nariz, na boca e na região do bumbum, dificuldade em ganhar peso, secreções, meningite, convulsões e retardo
+      mental.
+    </p>
+
+    <p class="text">
+      Na fase tardia da doença podem aparecer problemas mais graves, sendo progressivos e em qualquer idade. São eles:
+      retardo mental, cegueira, problemas ósseos e surdez.
+    </p>
+
+
+  </div>
+
+  <div class="finishButton">
+    <ion-button>
+      Terminei
+    </ion-button>
+  </div>
+</ion-content>

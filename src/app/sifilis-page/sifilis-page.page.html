@@ -6,10 +6,12 @@
 
 
 <ion-content (ionScroll)="isScroll($event)" scrollEvents="true">
-  <img class="headerImage" src="../../assets/img/img1.jpg">
+  <div class="headerImage">
+    <img src="../../assets/img/img1.jpg">
+  </div>
 
   <div padding>
-    <ion-text class="title">Síflis</ion-text>
+    <ion-text #title class="title">Síflis</ion-text>
 
     <p class="text">
       Vamos começar falando da Sífilis adquirida. Trata-se de uma infecção sexualmente transmissível, sendo a segunda

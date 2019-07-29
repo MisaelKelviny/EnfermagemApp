@@ -24,6 +24,9 @@ ion-content {
   display: flex;
   align-items: center;
   color: #d24a7d;
+  position: sticky;
+  top: 10px;
+  z-index: 999;
 }
 
 .text {
@@ -39,7 +42,7 @@ ion-content {
   color: #000000;
 }
 
-.finishButton{
+.finishButton {
   padding: 20px;
   display: flex;
   align-items: center;
@@ -47,28 +50,42 @@ ion-content {
   justify-content: center;
 }
 
-.toolbar-background{
-  --background: var(--ion-toolbar-background,var(--ion-background-color,#d66)) !important;
+.toolbar-background {
+  --background: var(--ion-toolbar-background, var(--ion-background-color, #d66)) !important;
 }
 
-.transparent-background{
+.transparent-background {
   --background: transparent !important;
 }
 
-.headerImage{
+div.headerImage {
   top: 0;
+  width: 100%;
+  height: 250px;
+  display: flex;
+  justify-content: center;
 }
 
-.backButton{
-  --color: #F840CE;
+div.headerImage img {
+  max-width: 140% !important;
+  margin: 0 auto;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
-.pageContainer{
+.backButton {
+  --color: #f840ce;
+}
+
+.pageContainer {
   position: relative;
   top: 120px;
 }
 
-.cardImage{
+.cardImage {
   width: 70%;
   height: 50%;
   background-position: center;

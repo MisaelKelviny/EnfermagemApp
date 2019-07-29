@@ -5,10 +5,12 @@
 </ion-header>
 
 <ion-content (ionScroll)="isScroll($event)" scrollEvents="true">
-  <img class="headerImage" src="../../assets/img/img2.jpg">
+  <div class="headerImage">
+    <img src="../../assets/img/img2.jpg">
+  </div>
 
   <div padding>
-    <ion-text class="title">Fases da Sífilis</ion-text>
+    <ion-text #title class="title">Fases da Sífilis</ion-text>
 
     <p class="text">
       É importante saber que existem diferentes fases de evolução da Sífilis. São elas: primária, secundária e
@@ -32,7 +34,8 @@
     </p>
 
     <p class="text">
-      Na fase terciária aparecem feridas maiores na pele, boca ou nariz, problemas em diversos órgãos, convulsões, perda
+      Na fase terciária aparecem feridas maiores na pele, boca ou nariz, problemas em diversos órgãos, convulsões,
+      perda
       auditiva, entre outros. Esse quadro surge quando a doença não é tratada há mais de 10 anos. A fase em que os
       sintomas não aparecem e estão adormecidos é chamada de Latente.
     </p>

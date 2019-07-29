@@ -5,7 +5,8 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', loadChildren: './home/home.module#HomePageModule' },
   { path: 'sifilis-page', loadChildren: './sifilis-page/sifilis-page.module#SifilisPagePageModule'},
-  { path: 'fases-page', loadChildren: './fases-page/fases-page.module#FasesPagePageModule' }
+  { path: 'fases-page', loadChildren: './fases-page/fases-page.module#FasesPagePageModule' },
+  { path: 'congenita-page', loadChildren: './congenita-page/congenita-page.module#CongenitaPagePageModule' }
 
 ];
 
