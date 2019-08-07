@@ -1,6 +1,6 @@
 <ion-header no-border>
   <ion-toolbar class="new-background-color">
-    <ion-searchbar placeholder="Doença, Tratamento..." animated></ion-searchbar>
+    <ion-searchbar [(ngModel)]="search" placeholder="Doença, Tratamento..." animated></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
@@ -269,4 +269,7 @@
     </ion-grid>
   </div>
 
+  <div class="credit" (click)="openCredits()">
+    <a>Créditos</a>
+  </div>
 </ion-content>
