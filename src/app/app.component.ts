@@ -19,7 +19,9 @@ export class AppComponent {
 
   initializeApp() {
     this.platform.ready().then(() => {
-      this.statusBar.styleDefault();
+      //altera o statusBar do aplicativo e do webview quando iniciado
+      this.statusBar.overlaysWebView(false);
+      this.statusBar.backgroundColorByHexString('#faecee');
       this.splashScreen.hide();
     });
   }

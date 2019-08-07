@@ -13,11 +13,9 @@ export class CongenitaPagePage implements OnInit {
   ngOnInit() {
     this.header.el.style.position = "absolute";
     this.title.el.style.marginLeft = "0px";
-    console.log(this.title); 
   }
 
   isScroll(ev){
-    console.log(ev);
     
     if(ev.detail.currentY <= 250){
       this.title.el.style.marginLeft = "0px";

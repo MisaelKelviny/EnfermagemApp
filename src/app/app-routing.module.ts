@@ -6,9 +6,8 @@ const routes: Routes = [
   { path: 'home', loadChildren: './home/home.module#HomePageModule' },
   { path: 'sifilis-page', loadChildren: './sifilis-page/sifilis-page.module#SifilisPagePageModule'},
   { path: 'fases-page', loadChildren: './fases-page/fases-page.module#FasesPagePageModule' },
-  { path: 'congenita-page', loadChildren: './congenita-page/congenita-page.module#CongenitaPagePageModule' },  { path: 'credit-modal', loadChildren: './credit-modal/credit-modal.module#CreditModalPageModule' }
-
-
+  { path: 'congenita-page', loadChildren: './congenita-page/congenita-page.module#CongenitaPagePageModule' },
+  { path: 'credit-modal', loadChildren: './credit-modal/credit-modal.module#CreditModalPageModule' }
 ];
 
 @NgModule({
