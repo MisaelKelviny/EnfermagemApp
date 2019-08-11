@@ -1,0 +1,23 @@
+.questionCard{
+    width: 100%;
+    background-color: #E2779F;
+    height: 50px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    color: white
+}
+
+.list-md{
+    padding-bottom: 0 !important;
+    background: none !important;
+}
+
+.item.sc-ion-label-md-h, .item .sc-ion-label-md-h{
+    white-space: normal !important;
+}
+
+.finalButton{
+   width: 300px; 
+}

@@ -1,9 +1,111 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>questionPage</ion-title>
+    <ion-buttons slot="start" (click)="dismiss()">
+      <ion-back-button class="backButton" defaultHref="{{typePage}}"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Você conhece a sífilis ?</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+      <form *ngIf="typePage == 'sifilis-page'">
+        <ion-list>
+          <div class="questionCard">
+            <p>Qual a forma de transmissão da Sífilis?</p>
+          </div>
+          <ion-radio-group>
+            <ion-item>
+              <ion-label>Através do beijo</ion-label>
+              <ion-radio slot="start" value="beijo" checked></ion-radio>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>Através da relação sexual</ion-label>
+              <ion-radio slot="start" value="relação"></ion-radio>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>Ao dividir o mesmo copo</ion-label>
+              <ion-radio slot="start" value="copo"></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+        </ion-list>
+
+        <ion-button expand="block" [disabled]="!userForm.valid" (click)="loginForm()">
+          Resultado
+        </ion-button>
+      </form>
+
+      <!-- <ion-list >
+      <div class="questionCard">
+        <p>Qual a forma de transmissão da Sífilis?</p>
+        </div>
+        <ion-radio-group>
+          <ion-item>
+            <ion-label>Através do beijo</ion-label>
+            <ion-radio  slot="start" value="beijo" checked></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Através da relação sexual</ion-label>
+            <ion-radio slot="start" value="relação"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Ao dividir o mesmo copo</ion-label>
+            <ion-radio slot="start" value="copo"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+      </ion-list>
+
+      <ion-list>
+        <div class="questionCard">
+          <p>A Sífilis aparece com os seguintes sintomas:</p>
+        </div>
+        <ion-radio-group [(ngModel)]="answer2">
+          <ion-item>
+            <ion-label>Pequenas feridas em órgãos genitais</ion-label>
+            <ion-radio slot="start" value="beijo" checked></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Ínguas na região da virilha</ion-label>
+            <ion-radio slot="start" value="relação"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Pus ou ardência</ion-label>
+            <ion-radio slot="start" value="copo"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Todas estão corretas</ion-label>
+            <ion-radio slot="start" value="all"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+      </ion-list>
+
+      <ion-list>
+        <div class="questionCard" >
+          <p>Os sintomas podem desaparecer com o tempo, sendo semanas, meses ou até anos?</p>
+        </div>
+        <ion-radio-group [(ngModel)]="answer3">
+          <ion-item>
+            <ion-label>Verdadeiro</ion-label>
+            <ion-radio slot="start" value="beijo" checked></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Falso</ion-label>
+            <ion-radio slot="start" value="relação"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+      </ion-list>
+    </div>
+
+    <div class="finishButton" (click)="finalizar(answer1, answer2, answer3)">
+      <ion-button>Resultado</ion-button>
+    </div>
+  </div> -->
 
 </ion-content>

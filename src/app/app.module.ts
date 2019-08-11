@@ -10,11 +10,13 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CreditModalPage } from './credit-modal/credit-modal.page';
 import { AppCustomPreloaderService } from './app-custom-preloader.service';
+import { QuestionPagePage } from './question-page/question-page.page';
 
 @NgModule({
-  declarations: [AppComponent, CreditModalPage],
+  declarations: [AppComponent, CreditModalPage,QuestionPagePage],
   entryComponents: [
     CreditModalPage,
+    QuestionPagePage
   ],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [
