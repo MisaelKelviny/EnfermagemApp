@@ -20,49 +20,49 @@ export class HomePage {
     pages: "/sifilis-page",
     titles: "Sífilis",
     subtitle: "Vamos começar falando sobre a Sífilis adquirida.",
-    url: "../../assets/img/img1.jpg",
+    url: "../../assets/img/menu01.svg",
     imageName: "image00"
   },
   {
     pages: "/fases-page",
     titles: "Fases da Sífilis",
     subtitle: "É importante saber que existe diferentes fases da evolução da sífilis.",
-    url: "../../assets/img/img2.jpg",
+    url: "../../assets/img/menu04.svg",
     imageName: "image01"
   },
   {
     pages: "/congenita-page",
     titles: "Sífilis Congênita",
     subtitle: "Uma doença congênita é aquela adquirida durante a gestação.",
-    url: "../../assets/img/gravida98983.jpg",
+    url: "../../assets/img/menu02.svg",
     imageName: "image02"
   },
   {
     pages: "",
     titles: "Tratamento",
     subtitle: "Evitar a transmissão entre parceiros consequentemente evita a transmissão",
-    url: "../../assets/img/treat.jpg",
+    url: "../../assets/img/menu07.svg",
     imageName: "image03"
   },
   {
     pages: "",
     titles: "Como saber se estou com Sífilis?",
     subtitle: "Ao verificar que há sintomas iguais",
-    url: "../../assets/img/lab.jpg",
+    url: "../../assets/img/menu05.svg",
     imageName: "image04"
   },
   {
     pages: "",
     titles: "Prevenção",
     subtitle: "Como se trata de uma infecção transmitida pela relação sexual",
-    url: "../../assets/img/camisinha1.JPG",
+    url: "../../assets/img/menu06.svg",
     imageName: "image05"
   },
   {
     pages: "",
     titles: "Camisinha",
     subtitle: "É o método de prevenção mais eficaz não só da sífilis",
-    url: "../../assets/img/camisinha2.JPG",
+    url: "../../assets/img/menu08.svg",
     imageName: "image06"
   }
   ]
@@ -96,19 +96,12 @@ export class HomePage {
 
   search(e: any) {
     const val = e.target.value;
-    console.log(this.cardMenu);
     if (val && val.trim != "") {
-      this.cardMenu = this.cardMenu.titles.filter((page) => {
-        return (page.title.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      this.cardMenu = this.cardMenu.filter((page) => {
+        return (page.titles.toLowerCase().indexOf(val.toLowerCase()) > -1);
       });
     } else {
       this.cardMenu = this.encontradas;
     }
-  }
-
-  //desconsiderar...
-  transform(items: any[], filterQuery: any): any[] {
-    if (!filterQuery) return items;
-    return items.filter(item => item.titles.toLowerCase().includes(filterQuery.toLowerCase()));
   }
 }

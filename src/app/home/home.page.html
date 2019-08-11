@@ -29,17 +29,7 @@
         </ion-col>
         <ion-col size="6">
           <div class="menuImage" >
-            <svg width="170" height="150" viewBox="0 0 131 120" fill="none" xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink">
-              <path
-                d="M71 0H121C126.523 0 131 4.47715 131 10V110C131 115.523 126.523 120 121 120H0C0 120 31 114 31 60C31 6 71 0 71 0Z"
-               [ngClass]="card.imageName" fill-opacity="0.4" />
-              <defs>
-                <pattern id="{{ card.imageName }}" width="1" height="1" viewBox="0 0 100 100" preserveAspectRatio="none">
-                  <image [attr.xlink:href]='card.url' width="100" height="100" preserveAspectRatio="none"></image>
-                </pattern>
-              </defs>
-            </svg>
+            <img src="{{card.url}}" height="150" [ngClass]="card.imageName">
           </div>
         </ion-col>
       </ion-row>
