@@ -11,7 +11,8 @@ const routes: Routes = [
   { path: 'credit-modal', loadChildren: './credit-modal/credit-modal.module#CreditModalPageModule' },  { path: 'tratamento-page', loadChildren: './tratamento-page/tratamento-page.module#TratamentoPagePageModule' },
   { path: 'estou-com-sifilis', loadChildren: './estou-com-sifilis/estou-com-sifilis.module#EstouComSifilisPageModule' },
   { path: 'prevencao', loadChildren: './prevencao/prevencao.module#PrevencaoPageModule' },
-  { path: 'camisinha', loadChildren: './camisinha/camisinha.module#CamisinhaPageModule' }
+  { path: 'camisinha', loadChildren: './camisinha/camisinha.module#CamisinhaPageModule' },
+  { path: 'question-page', loadChildren: './question-page/question-page.module#QuestionPagePageModule' }
 
 ];
 
