@@ -1,0 +1,28 @@
+<ion-header no-border #headerTransparent>
+  <ion-buttons slot="start">
+    <ion-back-button class="backButton" defaultHref="home"></ion-back-button>
+  </ion-buttons>
+</ion-header>
+
+<ion-content (ionScroll)="isScroll($event)" scrollEvents="true">
+  <div class="headerImage">
+    <img src="../../assets/img/camisinha2.JPG">
+  </div>
+
+  <div padding>
+    <ion-text #title class="title">Camisinha</ion-text>
+
+    <p class="text">
+      É o método de prevenção mais eficaz não só da sífilis, mas para qualquer outra infecção sexualmente transmissível.
+      Ainda assim, toda vez que tiver relação com um novo parceiro ou parceira, você deverá procurar a Unidade Básica de
+      Saúde e fazer os exames necessários para saber se está tudo bem, não deixando é claro de utilizar sempre a
+      camisinha.
+    </p>
+
+    <div class="finishButton">
+      <ion-button>
+        Terminei
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

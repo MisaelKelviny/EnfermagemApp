@@ -1,0 +1,36 @@
+<ion-header no-border #headerTransparent>
+  <ion-buttons slot="start">
+    <ion-back-button class="backButton" defaultHref="home"></ion-back-button>
+  </ion-buttons>
+</ion-header>
+
+<ion-content (ionScroll)="isScroll($event)" scrollEvents="true">
+  <div class="headerImage">
+    <img src="../../assets/img/lab.jpg">
+  </div>
+
+  <div padding>
+    <ion-text #title class="title">Como saber se estou com Sífilis?</ion-text>
+
+    <p class="text">
+      Ao verificar que há sintomas iguais ou parecidos aos citados nessa cartilha, a pessoa deverá procurar o mais
+      rápido possível uma Unidade Básica de Saúde para fazer o teste rápido, método prático e com resultados imediatos
+      realizados pelo(a) enfermeiro(a).
+    </p>
+
+    <div class="cardImage">
+      <img src="../../assets/img/treattalk.jpg">
+    </div>
+    <p class="text">
+      A pessoa diagnosticada com sífilis deverá comunicar ao parceiro ou parceira para que também façam exames e o
+      tratamento adequado quando necessário.
+    </p>
+
+    <div class="finishButton">
+      <ion-button>
+        Terminei
+      </ion-button>
+    </div>
+  </div>
+
+</ion-content>

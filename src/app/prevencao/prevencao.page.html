@@ -1,0 +1,35 @@
+<ion-header no-border #headerTransparent>
+  <ion-buttons slot="start">
+    <ion-back-button class="backButton" defaultHref="home"></ion-back-button>
+  </ion-buttons>
+</ion-header>
+
+<ion-content (ionScroll)="isScroll($event)" scrollEvents="true">
+  <div class="headerImage">
+    <img src="../../assets/img/camisinha1.JPG">
+  </div>
+
+  <div padding>
+    <ion-text #title class="title">Prevenção</ion-text>
+
+    <p class="text">
+      Como se trata de uma infecção transmitida pela relação sexual, o melhor jeito de prevenir a Sífilis é por meio do
+      uso do preservativo (mais conhecido como camisinha), distribuído de forma gratuita na rede pública.
+    </p>
+
+    <div class="cardImage">
+      <img src="../../assets/img/prenatal-1000x500.jpg">
+    </div>
+    <p class="text">
+      A mulher grávida deve também ficar atenta e iniciar o pré-natal o quanto antes. É muito importante frequentar
+      todas as consultas do período gestacional. Deixar de seguir as orientações do(a) enfermeiro(a) pode prejudicar o
+      desenvolvimento da criança.
+    </p>
+
+    <div class="finishButton">
+      <ion-button>
+        Terminei
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

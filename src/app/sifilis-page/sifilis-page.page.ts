@@ -18,8 +18,6 @@ export class SifilisPagePage implements OnInit {
   }
 
   isScroll(ev){
-    console.log(ev);
-    
     if(ev.detail.currentY <= 250){
       this.title.el.style.marginLeft = "0px";
       this.title.el.style.transition = "all 0.2s ease-in"

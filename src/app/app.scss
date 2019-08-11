@@ -31,6 +31,9 @@ ion-content {
   position: sticky;
   top: 10px;
   z-index: 999;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
 }
 
 .text {
@@ -89,7 +92,7 @@ div.headerImage img {
 }
 
 .cardImage {
-  width: 70%;
+  width: 100%;
   height: 50%;
   background-position: center;
   background-size: cover;
@@ -133,11 +136,11 @@ div.headerImage img {
 
 .menuImage {
   position: absolute;
-    top: -6px;
-    right: -5px;
-    width: 100%;
-    justify-content: end;
-    display: grid
+  top: -6px;
+  right: -5px;
+  width: 100%;
+  justify-content: end;
+  display: grid;
 }
 
 .menuTitle {
@@ -162,7 +165,7 @@ div.headerImage img {
   margin: 10px;
 }
 
-.credit{
+.credit {
   font-size: 13px;
   text-align: center;
   margin: 20px;

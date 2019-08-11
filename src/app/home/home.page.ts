@@ -38,28 +38,28 @@ export class HomePage {
     imageName: "image02"
   },
   {
-    pages: "",
+    pages: "/tratamento-page",
     titles: "Tratamento",
     subtitle: "Evitar a transmissão entre parceiros consequentemente evita a transmissão",
     url: "../../assets/img/menu07.svg",
     imageName: "image03"
   },
   {
-    pages: "",
+    pages: "/estou-com-sifilis",
     titles: "Como saber se estou com Sífilis?",
     subtitle: "Ao verificar que há sintomas iguais",
     url: "../../assets/img/menu05.svg",
     imageName: "image04"
   },
   {
-    pages: "",
+    pages: "/prevencao",
     titles: "Prevenção",
     subtitle: "Como se trata de uma infecção transmitida pela relação sexual",
     url: "../../assets/img/menu06.svg",
     imageName: "image05"
   },
   {
-    pages: "",
+    pages: "/camisinha",
     titles: "Camisinha",
     subtitle: "É o método de prevenção mais eficaz não só da sífilis",
     url: "../../assets/img/menu08.svg",
@@ -100,8 +100,10 @@ export class HomePage {
       this.cardMenu = this.cardMenu.filter((page) => {
         return (page.titles.toLowerCase().indexOf(val.toLowerCase()) > -1);
       });
+      document.getElementById("credito").style.display = "none";
     } else {
       this.cardMenu = this.encontradas;
+      document.getElementById("credito").style.display = "block";
     }
   }
 }
