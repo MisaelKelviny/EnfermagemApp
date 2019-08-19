@@ -1,6 +1,6 @@
 <ion-header no-border>
   <ion-toolbar class="new-background-color">
-    <ion-searchbar [(ngModel)]="searchBar" placeholder="Doença, Tratamento..." animated (ionInput)="search($event)"></ion-searchbar>
+    <ion-searchbar [(ngModel)]="searchbar" placeholder="Doença, Tratamento..." animated (ionInput)="search($event)"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
@@ -12,7 +12,7 @@
 
   <div class="cardMenu" *ngFor="let card of cardMenu" #menuList>
     <ion-grid>
-      <ion-row (click)="openPage(card.pages)">
+      <ion-row tappable (click)="openPage(card.pages)">
         <ion-col size="6">
           <ion-row>
             <ion-col size="12">

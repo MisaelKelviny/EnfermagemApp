@@ -14,7 +14,7 @@ import { QuestionPagePage } from './question-page/question-page.page';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, CreditModalPage,QuestionPagePage],
+  declarations: [AppComponent],
   entryComponents: [
     CreditModalPage,
     QuestionPagePage
