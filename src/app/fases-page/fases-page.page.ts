@@ -1,4 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { QuestionPagePage } from '../question-page/question-page.page';
+import { ModalController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-fases-page',
@@ -11,7 +14,7 @@ export class FasesPagePage implements OnInit {
   
   //variável que pega o titulo da página para poder manipular com o inicio do aplicativo.
   @ViewChild('title') title: any; 
-  constructor() { }
+  constructor(public modalController: ModalController) { }
 
   //método da interface OnInit que foi implementada, nela a função inicializa junto ao aplicativo e inicia todas as propriedades
   //e variáveis
@@ -39,6 +42,16 @@ export class FasesPagePage implements OnInit {
       this.title.el.style.marginLeft = "30px";
       this.title.el.style.transition = "all 0.2s ease-out"
     }
+  }
+
+  async questionPage() {
+    const modal = await this.modalController.create({
+      component: QuestionPagePage,
+      componentProps: {
+        "page":"fases-page"
+      }
+    });
+    return await modal.present();
   }
 
 }

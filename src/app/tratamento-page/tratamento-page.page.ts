@@ -1,4 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+import { QuestionPagePage } from '../question-page/question-page.page';
 
 @Component({
   selector: 'app-tratamento-page',
@@ -8,7 +10,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 export class TratamentoPagePage implements OnInit {
   @ViewChild('headerTransparent') header: any;
   @ViewChild('title') title: any;
-  constructor() { }
+  constructor(public modalController: ModalController) { }
 
   ngOnInit() {
     this.header.el.style.position = "absolute";
@@ -30,4 +32,13 @@ export class TratamentoPagePage implements OnInit {
     }
   }
 
+  async questionPage() {
+    const modal = await this.modalController.create({
+      component: QuestionPagePage,
+      componentProps: {
+        "page":"tratamento-page"
+      }
+    });
+    return await modal.present();
+  }
 }

@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { CreditModalPage } from '../credit-modal/credit-modal.page';
+import { AppRoutingPreloaderService } from '../app-routing-preloader.service';
 
 @Component({
   selector: 'app-home',

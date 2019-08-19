@@ -39,7 +39,6 @@ export class SifilisPagePage implements OnInit {
       componentProps: {
         "page":"sifilis-page"
       }
-
     });
     return await modal.present();
   }

@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 
 import { HomePage } from './home.page';
 import { CreditModalPage } from '../credit-modal/credit-modal.page';
+import { AppRoutingPreloaderService } from '../app-routing-preloader.service';
 
 @NgModule({
   imports: [
@@ -19,6 +20,7 @@ import { CreditModalPage } from '../credit-modal/credit-modal.page';
       }
     ])
   ],
-  declarations: [HomePage]
+  declarations: [HomePage],
+  providers:[AppRoutingPreloaderService]
 })
 export class HomePageModule {}

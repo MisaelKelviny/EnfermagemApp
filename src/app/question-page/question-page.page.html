@@ -8,104 +8,499 @@
 </ion-header>
 
 <ion-content>
-      <form *ngIf="typePage == 'sifilis-page'">
-        <ion-list>
-          <div class="questionCard">
-            <p>Qual a forma de transmissão da Sífilis?</p>
-          </div>
-          <ion-radio-group>
-            <ion-item>
-              <ion-label>Através do beijo</ion-label>
-              <ion-radio slot="start" value="beijo" checked></ion-radio>
-            </ion-item>
 
-            <ion-item>
-              <ion-label>Através da relação sexual</ion-label>
-              <ion-radio slot="start" value="relação"></ion-radio>
-            </ion-item>
-
-            <ion-item>
-              <ion-label>Ao dividir o mesmo copo</ion-label>
-              <ion-radio slot="start" value="copo"></ion-radio>
-            </ion-item>
-          </ion-radio-group>
-        </ion-list>
-
-        <ion-button expand="block" [disabled]="!userForm.valid" (click)="loginForm()">
-          Resultado
-        </ion-button>
-      </form>
-
-      <!-- <ion-list >
+  <div *ngIf="typePage == 'sifilis-page'">
+    <ion-list>
       <div class="questionCard">
         <p>Qual a forma de transmissão da Sífilis?</p>
-        </div>
-        <ion-radio-group>
-          <ion-item>
-            <ion-label>Através do beijo</ion-label>
-            <ion-radio  slot="start" value="beijo" checked></ion-radio>
-          </ion-item>
+      </div>
+      <ion-radio-group [(ngModel)]="question1">
+        <ion-item>
+          <ion-label>Através do beijo</ion-label>
+          <ion-radio slot="start" value="A" checked></ion-radio>
+        </ion-item>
 
-          <ion-item>
-            <ion-label>Através da relação sexual</ion-label>
-            <ion-radio slot="start" value="relação"></ion-radio>
-          </ion-item>
+        <ion-item>
+          <ion-label>Através da relação sexual</ion-label>
+          <ion-radio slot="start" value="B"></ion-radio>
+        </ion-item>
 
-          <ion-item>
-            <ion-label>Ao dividir o mesmo copo</ion-label>
-            <ion-radio slot="start" value="copo"></ion-radio>
-          </ion-item>
-        </ion-radio-group>
-      </ion-list>
+        <ion-item>
+          <ion-label>Ao dividir o mesmo copo</ion-label>
+          <ion-radio slot="start" value="C"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
 
-      <ion-list>
-        <div class="questionCard">
-          <p>A Sífilis aparece com os seguintes sintomas:</p>
-        </div>
-        <ion-radio-group [(ngModel)]="answer2">
-          <ion-item>
-            <ion-label>Pequenas feridas em órgãos genitais</ion-label>
-            <ion-radio slot="start" value="beijo" checked></ion-radio>
-          </ion-item>
+    <ion-list>
+      <div class="questionCard">
+        <p>A Sífilis aparece com os seguintes sintomas</p>
+      </div>
+      <ion-radio-group [(ngModel)]="question2">
+        <ion-item>
+          <ion-label>Pequenas feridas em órgãos genitais</ion-label>
+          <ion-radio slot="start" value="A" checked></ion-radio>
+        </ion-item>
 
-          <ion-item>
-            <ion-label>Ínguas na região da virilha</ion-label>
-            <ion-radio slot="start" value="relação"></ion-radio>
-          </ion-item>
+        <ion-item>
+          <ion-label>Ínguas na região da virilha</ion-label>
+          <ion-radio slot="start" value="B"></ion-radio>
+        </ion-item>
 
-          <ion-item>
-            <ion-label>Pus ou ardência</ion-label>
-            <ion-radio slot="start" value="copo"></ion-radio>
-          </ion-item>
+        <ion-item>
+          <ion-label>Pus ou ardência</ion-label>
+          <ion-radio slot="start" value="C"></ion-radio>
+        </ion-item>
 
-          <ion-item>
-            <ion-label>Todas estão corretas</ion-label>
-            <ion-radio slot="start" value="all"></ion-radio>
-          </ion-item>
-        </ion-radio-group>
-      </ion-list>
+        <ion-item>
+          <ion-label>Todas estão corretas</ion-label>
+          <ion-radio slot="start" value="D"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
 
-      <ion-list>
-        <div class="questionCard" >
-          <p>Os sintomas podem desaparecer com o tempo, sendo semanas, meses ou até anos?</p>
-        </div>
-        <ion-radio-group [(ngModel)]="answer3">
-          <ion-item>
-            <ion-label>Verdadeiro</ion-label>
-            <ion-radio slot="start" value="beijo" checked></ion-radio>
-          </ion-item>
+    <ion-list>
+      <div class="questionCard">
+        <p>Os sintomas podem desaparecer com o tempo, sendo semanas, meses ou até anos?</p>
+      </div>
+      <ion-radio-group [(ngModel)]="question3">
+        <ion-item>
+          <ion-label>Verdadeiro</ion-label>
+          <ion-radio slot="start" value="A" checked></ion-radio>
+        </ion-item>
 
-          <ion-item>
-            <ion-label>Falso</ion-label>
-            <ion-radio slot="start" value="relação"></ion-radio>
-          </ion-item>
-        </ion-radio-group>
-      </ion-list>
-    </div>
+        <ion-item>
+          <ion-label>Falso</ion-label>
+          <ion-radio slot="start" value="B"></ion-radio>
+        </ion-item>
 
-    <div class="finishButton" (click)="finalizar(answer1, answer2, answer3)">
-      <ion-button>Resultado</ion-button>
-    </div>
-  </div> -->
+      </ion-radio-group>
+    </ion-list>
+
+    <ion-button expand="block" (click)="finalizar(question1, question2, question3)">
+      Resultado
+    </ion-button>
+
+  </div>
+
+  <div *ngIf="typePage == 'fases-page'">
+    <ion-list>
+      <div class="questionCard">
+        <p>Quais são as fases da Sífilis?</p>
+      </div>
+      <ion-radio-group [(ngModel)]="question1">
+        <ion-item>
+          <ion-label>Apenas primária</ion-label>
+          <ion-radio slot="start" value="A" checked></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Primária e secundária</ion-label>
+          <ion-radio slot="start" value="B"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Primária, secundária e terciária</ion-label>
+          <ion-radio slot="start" value="C"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Primária, secundária, terciária e latente</ion-label>
+          <ion-radio slot="start" value="D"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+
+    <ion-list>
+      <div class="questionCard">
+        <p>Feridas no local da infecção, que duram de duas a três semanas e são indolores, são sintomas de qual fase?
+        </p>
+      </div>
+      <ion-radio-group [(ngModel)]="question2">
+        <ion-item>
+          <ion-label>Primaria</ion-label>
+          <ion-radio slot="start" value="A" checked></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Secundaria</ion-label>
+          <ion-radio slot="start" value="B"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Terciaria</ion-label>
+          <ion-radio slot="start" value="C"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Latente</ion-label>
+          <ion-radio slot="start" value="D"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+
+    <ion-list>
+      <div class="questionCard">
+        <p>A fase em que os sintomas não aparecem e estão adormecidos é chamada de latente.</p>
+      </div>
+      <ion-radio-group [(ngModel)]="question3">
+        <ion-item>
+          <ion-label>Verdadeiro</ion-label>
+          <ion-radio slot="start" value="A" checked></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Falso</ion-label>
+          <ion-radio slot="start" value="B"></ion-radio>
+        </ion-item>
+
+      </ion-radio-group>
+    </ion-list>
+
+    <ion-button expand="block" (click)="finalizar(question1, question2, question3)">
+      Resultado
+    </ion-button>
+  </div>
+
+  <div *ngIf="typePage == 'congenita-page'">
+    <ion-list>
+      <div class="questionCard">
+        <p>O que é a Sífilis Congênita?</p>
+      </div>
+      <ion-radio-group [(ngModel)]="question1">
+        <ion-item>
+          <ion-label>Uma infecção sexualmente transmissível</ion-label>
+          <ion-radio slot="start" value="A" checked></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Uma infecção transmitida pelo parceiro ou parceira</ion-label>
+          <ion-radio slot="start" value="B"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Uma infecção transmitida de mãe para filho</ion-label>
+          <ion-radio slot="start" value="C"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Uma infecção que não possui nenhuma forma de transmissão</ion-label>
+          <ion-radio slot="start" value="D"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+
+    <ion-list>
+      <div class="questionCard">
+        <p>A fase em que é comum aparecer sintomas como lesões no nariz, boca ou bumbum, dificuldade em ganhar peso ou
+          mesmo secreções é chamada de:</p>
+      </div>
+      <ion-radio-group [(ngModel)]="question2">
+        <ion-item>
+          <ion-label>Precoce</ion-label>
+          <ion-radio slot="start" value="A" checked></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Tardia</ion-label>
+          <ion-radio slot="start" value="B"></ion-radio>
+        </ion-item>
+
+      </ion-radio-group>
+    </ion-list>
+
+    <ion-list>
+      <div class="questionCard">
+        <p>A fase em que podem aparecer problemas mais graves como retardo mental, cegueira, problemas ósseos e surdez é
+          chamada de:</p>
+      </div>
+      <ion-radio-group [(ngModel)]="question3">
+        <ion-item>
+          <ion-label>Precoce</ion-label>
+          <ion-radio slot="start" value="A" checked></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Tardia</ion-label>
+          <ion-radio slot="start" value="B"></ion-radio>
+        </ion-item>
+
+      </ion-radio-group>
+    </ion-list>
+
+    <ion-button expand="block" (click)="finalizar(question1, question2, question3)">
+      Resultado
+    </ion-button>
+
+  </div>
+
+  <div *ngIf="typePage == 'tratamento-page'">
+    <ion-list>
+      <div class="questionCard">
+        <p>Como é o tratamento da Sífilis?</p>
+      </div>
+      <ion-radio-group [(ngModel)]="question1">
+        <ion-item>
+          <ion-label>Vacinas</ion-label>
+          <ion-radio slot="start" value="A" checked></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Pomadas</ion-label>
+          <ion-radio slot="start" value="B"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Antibióticos</ion-label>
+          <ion-radio slot="start" value="C"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Nenhuma das anteriores</ion-label>
+          <ion-radio slot="start" value="D"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+
+    <ion-list>
+      <div class="questionCard">
+        <p>O que fazer ao iniciar o tratamento com esse medicamento?</p>
+      </div>
+      <ion-radio-group [(ngModel)]="question2">
+        <ion-item>
+          <ion-label>Aguardar tratamento em casa</ion-label>
+          <ion-radio slot="start" value="A" checked></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Procurar uma unidade de atendimento</ion-label>
+          <ion-radio slot="start" value="B"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Pesquisar por conta própria a melhor forma de tratar</ion-label>
+          <ion-radio slot="start" value="C"></ion-radio>
+        </ion-item>
+
+      </ion-radio-group>
+    </ion-list>
+
+    <ion-list>
+      <div class="questionCard">
+        <p>A gestante infectada deverá se preocupar em fazer o tratamento até um mês antes do parto. Vale lembrar, que
+          se não tratada pode levar ao aborto.</p>
+      </div>
+      <ion-radio-group [(ngModel)]="question3">
+        <ion-item>
+          <ion-label>Verdadeiro</ion-label>
+          <ion-radio slot="start" value="A" checked></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Falso</ion-label>
+          <ion-radio slot="start" value="B"></ion-radio>
+        </ion-item>
+
+      </ion-radio-group>
+    </ion-list>
+
+    <ion-button expand="block" (click)="finalizar(question1, question2, question3)">
+      Resultado
+    </ion-button>
+
+  </div>
+
+  <div *ngIf="typePage == 'estou-com-sifilis'">
+    <ion-list>
+      <div class="questionCard">
+        <p>Qual o nome do teste utilizado como método prático e com resultados imediatos na detecção da Sífilis?</p>
+      </div>
+      <ion-radio-group [(ngModel)]="question1">
+        <ion-item>
+          <ion-label>Teste de glicemia</ion-label>
+          <ion-radio slot="start" value="A" checked></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Teste do pezinho</ion-label>
+          <ion-radio slot="start" value="B"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Teste de gravidez</ion-label>
+          <ion-radio slot="start" value="C"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Teste rápido</ion-label>
+          <ion-radio slot="start" value="D"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+
+    <ion-list>
+      <div class="questionCard">
+        <p>Deixar de comunicar o parceiro ou parceira para que também façam os exames e tratamento adequado, é uma forma
+          segura de evitar a Sífilis.</p>
+      </div>
+      <ion-radio-group [(ngModel)]="question3">
+        <ion-item>
+          <ion-label>Verdadeiro</ion-label>
+          <ion-radio slot="start" value="A" checked></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Falso</ion-label>
+          <ion-radio slot="start" value="B"></ion-radio>
+        </ion-item>
+
+      </ion-radio-group>
+    </ion-list>
+
+    <ion-button expand="block" (click)="finalizar(question1, question2, question3)">
+      Resultado
+    </ion-button>
+
+  </div>
+
+  <div *ngIf="typePage == 'prevencao'">
+    <ion-list>
+      <div class="questionCard">
+        <p>Qual é o melhor jeito de prevenir a Sífilis?</p>
+      </div>
+      <ion-radio-group [(ngModel)]="question1">
+        <ion-item>
+          <ion-label>Uso do preservativo (camisinha)</ion-label>
+          <ion-radio slot="start" value="A" checked></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Adotar hábitos de boa higiene intima</ion-label>
+          <ion-radio slot="start" value="B"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Checar se há saneamento básico na residência</ion-label>
+          <ion-radio slot="start" value="C"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Evitar beber água em copos compartilhados</ion-label>
+          <ion-radio slot="start" value="D"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+
+    <ion-list>
+      <div class="questionCard">
+        <p>A camisinha é distribuída de qual forma na rede pública?</p>
+      </div>
+      <ion-radio-group [(ngModel)]="question2">
+        <ion-item>
+          <ion-label>Através de receita médica</ion-label>
+          <ion-radio slot="start" value="A" checked></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>De forma gratuita</ion-label>
+          <ion-radio slot="start" value="B"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Apenas pagando</ion-label>
+          <ion-radio slot="start" value="C"></ion-radio>
+        </ion-item>
+
+      </ion-radio-group>
+    </ion-list>
+
+    <ion-list>
+      <div class="questionCard">
+        <p>A mulher grávida deve também ficar atenta e iniciar o pré-natal o quanto antes. É muito importante frequentar
+          todas as consultas do período gestacional.</p>
+      </div>
+      <ion-radio-group [(ngModel)]="question3">
+        <ion-item>
+          <ion-label>Verdadeiro</ion-label>
+          <ion-radio slot="start" value="A" checked></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Falso</ion-label>
+          <ion-radio slot="start" value="B"></ion-radio>
+        </ion-item>
+
+      </ion-radio-group>
+    </ion-list>
+
+    <ion-button expand="block" (click)="finalizar(question1, question2, question3)">
+      Resultado
+    </ion-button>
+
+  </div>
+
+  <div *ngIf="typePage == 'camisinha'">
+    <ion-list>
+      <div class="questionCard">
+        <p>A camisinha é o método de prevenção menos eficaz não só da sífilis, mas para outras infecções sexualmente
+          transmissíveis.</p>
+      </div>
+      <ion-radio-group [(ngModel)]="question1">
+        <ion-item>
+          <ion-label>Verdadeiro</ion-label>
+          <ion-radio slot="start" value="A" checked></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Falso</ion-label>
+          <ion-radio slot="start" value="B"></ion-radio>
+        </ion-item>
+
+      </ion-radio-group>
+    </ion-list>
+
+    <ion-list>
+      <div class="questionCard">
+        <p>Além do uso da camisinha, o que é importante fazer ao iniciar uma relação com um novo parceiro ou parceira?
+        </p>
+      </div>
+      <ion-radio-group [(ngModel)]="question2">
+        <ion-item>
+          <ion-label>Procurar uma Unidade Básica de Saúde</ion-label>
+          <ion-radio slot="start" value="A" checked></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Fazer os exames necessários</ion-label>
+          <ion-radio slot="start" value="B"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Conscientizar o parceiro ou parceira</ion-label>
+          <ion-radio slot="start" value="C"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Todas estão corretas</ion-label>
+          <ion-radio slot="start" value="D"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+
+    <ion-button expand="block" (click)="finalizar(question1, question2, question3)">
+      Resultado
+    </ion-button>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
 
 </ion-content>

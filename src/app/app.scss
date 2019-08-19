@@ -18,7 +18,14 @@ ion-content {
 //   border-radius: 40px !important;
 //   box-shadow: none !important;
 // }
-
+.imgSize{
+  width: 50%;
+  display: flex;
+  margin: 0 auto;
+}
+.alert-message.sc-ion-alert-md{
+  max-height: 100% !important;
+}
 .title {
   font-family: Poppins;
   font-style: normal;
