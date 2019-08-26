@@ -1,6 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { NavParams, ModalController } from '@ionic/angular';
+import { NavParams, ModalController, NavController } from '@ionic/angular';
 import { AlertController } from '@ionic/angular';
+import { Route } from '@angular/compiler/src/core';
+import { Router } from '@angular/router';
+import { ViewController } from '@ionic/core';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-question-page',
@@ -15,7 +19,10 @@ export class QuestionPagePage implements OnInit {
 
   constructor(public modalCtrl: ModalController,
     public navParams: NavParams,
-    public alertController: AlertController) {
+    public alertController: AlertController,
+    public router: Router,
+    public nav: NavController,
+    public storage: Storage) {
     this.typePage = navParams.get('page');
   }
 
@@ -41,6 +48,11 @@ export class QuestionPagePage implements OnInit {
     await alert.present();
   }
 
+  setChapterComplete(page){
+    this.storage.set("/"+page+"Check", 'true');
+    console.log("/"+page+"Check");
+  }
+  
   async finalizar(quest1, quest2, quest3) {
 
     let result: any;
@@ -142,13 +154,15 @@ export class QuestionPagePage implements OnInit {
           const alert = await this.alertController.create({
             message: '<img src="../assets/img/breastfeeding.png" class="imgSize"/> <br>' +
               '<h2>Parabéns! você sabe tudo!</h2>' +
-              '<br>Muito bem, você tem dominio sobre o assunto! E cuidará muito bem de seus pacientes.',
+              '<br>Muito bem, você tem dominio sobre o assunto!',
 
             buttons: ['OK']
           });
 
           await alert.present();
           await this.dismiss();
+          await this.router.navigate(["home"]);
+          this.setChapterComplete('sifilis-page');
         }
 
       } else {
@@ -221,13 +235,15 @@ export class QuestionPagePage implements OnInit {
           const alert = await this.alertController.create({
             message: '<img src="../assets/img/breastfeeding.png" class="imgSize"/> <br>' +
               '<h2>Parabéns! você sabe tudo!</h2>' +
-              '<br>Muito bem, você tem dominio sobre o assunto! E cuidará muito bem de seus pacientes.',
+              '<br>Muito bem, você tem dominio sobre o assunto!',
 
             buttons: ['OK']
           });
 
           await alert.present();
           await this.dismiss();
+          await this.router.navigate(["home"]);
+          this.setChapterComplete('fases-page');
         }
 
       } else {
@@ -299,13 +315,14 @@ export class QuestionPagePage implements OnInit {
           const alert = await this.alertController.create({
             message: '<img src="../assets/img/breastfeeding.png" class="imgSize"/> <br>' +
               '<h2>Parabéns! você sabe tudo!</h2>' +
-              '<br>Muito bem, você tem dominio sobre o assunto! E cuidará muito bem de seus pacientes.',
+              '<br>Muito bem, você tem dominio sobre o assunto!',
 
             buttons: ['OK']
           });
 
           await alert.present();
           await this.dismiss();
+          await this.router.navigate(["home"])
         }
       } else {
         const alert = await this.alertController.create({
@@ -376,13 +393,14 @@ export class QuestionPagePage implements OnInit {
           const alert = await this.alertController.create({
             message: '<img src="../assets/img/breastfeeding.png" class="imgSize"/> <br>' +
               '<h2>Parabéns! você sabe tudo!</h2>' +
-              '<br>Muito bem, você tem dominio sobre o assunto! E cuidará muito bem de seus pacientes.',
+              '<br>Muito bem, você tem dominio sobre o assunto!',
 
             buttons: ['OK']
           });
 
           await alert.present();
           await this.dismiss();
+          await this.router.navigate(["home"])
         }
       } else {
         const alert = await this.alertController.create({
@@ -438,13 +456,14 @@ export class QuestionPagePage implements OnInit {
           const alert = await this.alertController.create({
             message: '<img src="../assets/img/breastfeeding.png" class="imgSize"/> <br>' +
               '<h2>Parabéns! você sabe tudo!</h2>' +
-              '<br>Muito bem, você tem dominio sobre o assunto! E cuidará muito bem de seus pacientes.',
+              '<br>Muito bem, você tem dominio sobre o assunto!',
 
             buttons: ['OK']
           });
 
           await alert.present();
           await this.dismiss();
+          await this.router.navigate(["home"])
         }
       } else {
         const alert = await this.alertController.create({
@@ -515,13 +534,14 @@ export class QuestionPagePage implements OnInit {
           const alert = await this.alertController.create({
             message: '<img src="../assets/img/breastfeeding.png" class="imgSize"/> <br>' +
               '<h2>Parabéns! você sabe tudo!</h2>' +
-              '<br>Muito bem, você tem dominio sobre o assunto! E cuidará muito bem de seus pacientes.',
+              '<br>Muito bem, você tem dominio sobre o assunto!',
 
             buttons: ['OK']
           });
 
           await alert.present();
           await this.dismiss();
+          await this.router.navigate(["home"])
         }
       } else {
         const alert = await this.alertController.create({
@@ -577,13 +597,14 @@ export class QuestionPagePage implements OnInit {
           const alert = await this.alertController.create({
             message: '<img src="../assets/img/breastfeeding.png" class="imgSize"/> <br>' +
               '<h2>Parabéns! você sabe tudo!</h2>' +
-              '<br>Muito bem, você tem dominio sobre o assunto! E cuidará muito bem de seus pacientes.',
+              '<br>Muito bem, você tem dominio sobre o assunto!',
 
             buttons: ['OK']
           });
 
           await alert.present();
           await this.dismiss();
+          await this.router.navigate(["home"])
         }
       } else {
         const alert = await this.alertController.create({

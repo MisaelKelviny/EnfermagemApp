@@ -12,14 +12,26 @@ import { CreditModalPage } from './credit-modal/credit-modal.page';
 import { AppCustomPreloaderService } from './app-custom-preloader.service';
 import { QuestionPagePage } from './question-page/question-page.page';
 import { FormsModule } from '@angular/forms';
+import { CreditModalPageModule } from './credit-modal/credit-modal.module';
+import { QuestionPagePageModule } from './question-page/question-page.module';
+import { IonicStorageModule } from '@ionic/storage';
+
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [
     CreditModalPage,
-    QuestionPagePage
+    QuestionPagePage,
   ],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule],
+  imports: [
+    BrowserModule,
+    IonicModule.forRoot(),
+    IonicStorageModule.forRoot(),
+    AppRoutingModule,
+    FormsModule,
+    CreditModalPageModule,
+    QuestionPagePageModule
+  ],
   providers: [
     StatusBar,
     SplashScreen,
@@ -28,4 +40,4 @@ import { FormsModule } from '@angular/forms';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

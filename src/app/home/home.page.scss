@@ -2,30 +2,35 @@
   fill: url(#image);
   stroke: red;
   stroke-width: 5;
-}.new-background-color {
+}
+.new-background-color {
   --background: #faecee !important;
 }
 
-
+.iconCheck{
+  position: absolute;
+  right: 10px;
+  bottom: 0px;
+}
 
 // .image00 {
-//   fill: url(#image00);
+//   height: 150px;
 // }
 // .image01 {
-//   fill: url(#image01);
+//   height: 150px;
 // }
 // .image02 {
-//   fill: url(#image02);
+//   height: 150px;
 // }
 // .image03 {
-//   fill: url(#image03);
+//   height: 150px;
 // }
 // .image04 {
-//   fill: url(#image04);
+//   height: 150px;
 // }
 // .image05 {
-//   fill: url(#image05);
+//   height: 150px;
 // }
 // .image06 {
-//   fill: url(#image06);
+//   height: 150px;
 // }

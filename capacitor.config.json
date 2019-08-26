@@ -1,0 +1,7 @@
+{
+  "appId": "io.ionic.cartilha",
+  "appName": "cartilha",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www"
+}

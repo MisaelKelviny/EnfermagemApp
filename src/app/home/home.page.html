@@ -28,7 +28,9 @@
           </ion-row>
         </ion-col>
         <ion-col size="6">
+          <ion-icon *ngIf="card.checked" name="home" class="iconCheck"></ion-icon>
           <div class="menuImage" >
+            <!-- <ion-img [src]="card.url" [ngClass]="card.imageName"></ion-img> -->
             <img src="{{card.url}}" height="150" [ngClass]="card.imageName">
           </div>
         </ion-col>
