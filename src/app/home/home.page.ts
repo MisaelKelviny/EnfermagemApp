@@ -2,8 +2,8 @@ import { Component, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { CreditModalPage } from '../credit-modal/credit-modal.page';
-import { AppRoutingPreloaderService } from '../app-routing-preloader.service';
 import { Storage } from '@ionic/storage';
+import { SQLite, SQLiteObject } from '@ionic-native/sqlite/ngx';
 
 
 @Component({
@@ -84,20 +84,20 @@ export class HomePage {
 
   constructor(public router: Router,
     public modalController: ModalController,
-    private storage: Storage) {
-      this.getChapterCheck();
+    private storage: Storage,
+    private sqlite: SQLite) {
+    this.getChapterCheck();
+
   }
 
-  getChapterCheck(){
+  getChapterCheck() {
     // this.cardMenu[i].checked = false;
-    for(let j=0;j < this.cardMenu.length;j++){
+    for (let j = 0; j < this.cardMenu.length; j++) {
       this.storage.get(this.cardMenu[j].pages + "Check").then((val) => {
-        for(let i=0;i < this.cardMenu.length;i++){
-          console.log(this.cardMenu[i].pages);
-          if(this.cardMenu[i].pages+"Check" == this.cardMenu[j].pages+"Check" && val){
-            console.log("OK");
+        for (let i = 0; i < this.cardMenu.length; i++) {
+          if (this.cardMenu[i].pages + "Check" == this.cardMenu[j].pages + "Check" && val) {
             this.cardMenu[i].checked = true;
-          }else{
+          } else {
             this.cardMenu[i].check = false;
           }
         }

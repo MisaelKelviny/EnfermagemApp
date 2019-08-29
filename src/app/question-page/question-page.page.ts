@@ -50,7 +50,6 @@ export class QuestionPagePage implements OnInit {
 
   setChapterComplete(page){
     this.storage.set("/"+page+"Check", 'true');
-    console.log("/"+page+"Check");
   }
   
   async finalizar(quest1, quest2, quest3) {
@@ -110,7 +109,6 @@ export class QuestionPagePage implements OnInit {
           if (quest3 == sifilisPage[i].quest3) {
             correta++;
           }
-          console.log(correta);
           result = correta;
         }
         if (result == 0) {
@@ -322,7 +320,8 @@ export class QuestionPagePage implements OnInit {
 
           await alert.present();
           await this.dismiss();
-          await this.router.navigate(["home"])
+          await this.router.navigate(["home"]);
+          this.setChapterComplete('congenita-page');
         }
       } else {
         const alert = await this.alertController.create({
@@ -401,6 +400,7 @@ export class QuestionPagePage implements OnInit {
           await alert.present();
           await this.dismiss();
           await this.router.navigate(["home"])
+          this.setChapterComplete('tratamento-page');
         }
       } else {
         const alert = await this.alertController.create({
@@ -464,6 +464,7 @@ export class QuestionPagePage implements OnInit {
           await alert.present();
           await this.dismiss();
           await this.router.navigate(["home"])
+          this.setChapterComplete('estou-com-sifilis');
         }
       } else {
         const alert = await this.alertController.create({
@@ -542,6 +543,7 @@ export class QuestionPagePage implements OnInit {
           await alert.present();
           await this.dismiss();
           await this.router.navigate(["home"])
+          this.setChapterComplete('prevencao');
         }
       } else {
         const alert = await this.alertController.create({
@@ -605,6 +607,7 @@ export class QuestionPagePage implements OnInit {
           await alert.present();
           await this.dismiss();
           await this.router.navigate(["home"])
+          this.setChapterComplete('camisinha');
         }
       } else {
         const alert = await this.alertController.create({

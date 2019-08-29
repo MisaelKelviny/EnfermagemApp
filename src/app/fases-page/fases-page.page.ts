@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { QuestionPagePage } from '../question-page/question-page.page';
-import { ModalController } from '@ionic/angular';
+import { ModalController, Platform } from '@ionic/angular';
 
 
 @Component({
@@ -14,7 +14,7 @@ export class FasesPagePage implements OnInit {
   
   //variável que pega o titulo da página para poder manipular com o inicio do aplicativo.
   @ViewChild('title') title: any; 
-  constructor(public modalController: ModalController) { }
+  constructor(public modalController: ModalController, public platform: Platform) { }
 
   //método da interface OnInit que foi implementada, nela a função inicializa junto ao aplicativo e inicia todas as propriedades
   //e variáveis
@@ -31,16 +31,33 @@ export class FasesPagePage implements OnInit {
   isScroll(ev){
     //se o scroll na eixo cartesiano Y for menor que 250px o mesmo ativa as propriedades necessarias no css
     //o mesmo ativa as propriedades no titulo e no header
-    if(ev.detail.currentY <= 250){
-      this.title.el.style.marginLeft = "0px";
-      this.title.el.style.transition = "all 0.2s ease-in"
-      this.header.el.style.position = "absolute";
-      this.header.el.style.backgroundColor = "transparent";
-      this.header.el.style.transition = "all 0.2s ease-in";
+    if(this.platform.is('ios')){
+      if(ev.detail.currentY <= 250){
+        this.title.el.style.marginLeft = "0px";
+        this.title.el.style.transition = "all 0.2s ease-in"
+        this.title.el.style.textAlign = "start"
+        this.header.el.style.position = "absolute";
+        this.header.el.style.backgroundColor = "transparent";
+        this.header.el.style.transition = "all 0.2s ease-in";
+      }else{
+        this.header.el.style.backgroundColor = "#faecee";
+        this.title.el.style.marginLeft = "0px";
+        this.title.el.style.display = "flow-root";
+        this.title.el.style.transition = "all 0.2s ease-out";
+        this.title.el.style.textAlign = "center"
+      }
     }else{
-      this.header.el.style.backgroundColor = "#faecee";
-      this.title.el.style.marginLeft = "30px";
-      this.title.el.style.transition = "all 0.2s ease-out"
+      if(ev.detail.currentY <= 250){
+        this.title.el.style.marginLeft = "0px";
+        this.title.el.style.transition = "all 0.2s ease-in"
+        this.header.el.style.position = "absolute";
+        this.header.el.style.backgroundColor = "transparent";
+        this.header.el.style.transition = "all 0.2s ease-in";
+      }else{
+        this.header.el.style.backgroundColor = "#faecee";
+        this.title.el.style.marginLeft = "30px";
+        this.title.el.style.transition = "all 0.2s ease-out"
+      }
     }
   }
 

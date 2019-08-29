@@ -15,7 +15,8 @@ import { FormsModule } from '@angular/forms';
 import { CreditModalPageModule } from './credit-modal/credit-modal.module';
 import { QuestionPagePageModule } from './question-page/question-page.module';
 import { IonicStorageModule } from '@ionic/storage';
-
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { SQLite } from '@ionic-native/sqlite/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -30,12 +31,15 @@ import { IonicStorageModule } from '@ionic/storage';
     AppRoutingModule,
     FormsModule,
     CreditModalPageModule,
-    QuestionPagePageModule
+    QuestionPagePageModule,
+     // ENV.production ? ServiceWorkerModule.register('/ngsw-worker.js') : []
+    ServiceWorkerModule.register('/ngsw-worker.js')
   ],
   providers: [
     StatusBar,
     SplashScreen,
     AppCustomPreloaderService,
+    SQLite,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

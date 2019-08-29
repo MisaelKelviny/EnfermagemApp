@@ -7,10 +7,15 @@
   --background: #faecee !important;
 }
 
-.iconCheck{
+.iconCheck {
   position: absolute;
   right: 10px;
-  bottom: 0px;
+  bottom: -10px;
+  color: green;
+  height: 30px;
+  width: 30px;
+  -webkit-text-stroke: 10px green;
+  font-weight: bolder;
 }
 
 // .image00 {
