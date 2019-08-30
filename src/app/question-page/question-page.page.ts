@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectorRef } from '@angular/core';
 import { NavParams, ModalController, NavController } from '@ionic/angular';
 import { AlertController } from '@ionic/angular';
 import { Route } from '@angular/compiler/src/core';
@@ -22,13 +22,18 @@ export class QuestionPagePage implements OnInit {
     public alertController: AlertController,
     public router: Router,
     public nav: NavController,
-    public storage: Storage) {
+    public storage: Storage,
+    public cd: ChangeDetectorRef) {
     this.typePage = navParams.get('page');
   }
 
   ngOnInit() {
     // console.log(this.questions);
 
+  }
+
+  ionViewWillLeave(){
+    this.cd.detectChanges();
   }
 
   dismiss() {
@@ -159,7 +164,7 @@ export class QuestionPagePage implements OnInit {
 
           await alert.present();
           await this.dismiss();
-          await this.router.navigate(["home"]);
+          await this.router.navigate(["home"], {replaceUrl: true});
           this.setChapterComplete('sifilis-page');
         }
 
