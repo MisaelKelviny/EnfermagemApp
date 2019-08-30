@@ -14,19 +14,19 @@ ion-content {
   --ion-background-color: linear-gradient(160.61deg, #faecee 18.35%, #ffffff 54.94%) !important;
 }
 
-.sc-ion-buttons-ios-h{
+.sc-ion-buttons-ios-h {
   height: 50px !important;
 }
 // input.searchbar-input.sc-ion-searchbar-md {
 //   border-radius: 40px !important;
 //   box-shadow: none !important;
 // }
-.imgSize{
+.imgSize {
   width: 50%;
   display: flex;
   margin: 0 auto;
 }
-.alert-message.sc-ion-alert-md{
+.alert-message.sc-ion-alert-md {
   max-height: 100% !important;
 }
 .title {
@@ -179,4 +179,9 @@ div.headerImage img {
   font-size: 13px;
   text-align: center;
   margin: 20px;
+}
+
+.searchbar-animated.sc-ion-searchbar-ios-h .searchbar-input.sc-ion-searchbar-ios,
+.searchbar-animated.sc-ion-searchbar-ios-h .searchbar-search-icon.sc-ion-searchbar-ios {
+  background-color: white !important
 }
