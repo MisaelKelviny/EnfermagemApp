@@ -43,6 +43,7 @@
               }
             ],
             "scripts": [],
+            "serviceWorker": true,
             "es5BrowserSupport": true
           },
           "configurations": {
