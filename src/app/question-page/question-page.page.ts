@@ -15,8 +15,11 @@ export class QuestionPagePage implements OnInit {
 
   @Input() page: string;
   typePage: any;
-  question1: any;
+  question1:any
+  question2:any
+  question3:any
 
+  
   constructor(public modalCtrl: ModalController,
     public navParams: NavParams,
     public alertController: AlertController,

@@ -13,7 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { CreditModalPageModule } from './credit-modal/credit-modal.module';
 import { QuestionPagePageModule } from './question-page/question-page.module';
 import { IonicStorageModule } from '@ionic/storage';
-import { SQLite } from '@ionic-native/sqlite/ngx';
+import { CustomersModule } from './customers/customers.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,15 +24,15 @@ import { SQLite } from '@ionic-native/sqlite/ngx';
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
-    IonicStorageModule.forRoot(),
     AppRoutingModule,
     FormsModule,
+    IonicStorageModule.forRoot(),
     CreditModalPageModule,
     QuestionPagePageModule,
+    CustomersModule,
   ],
   providers: [
     AppCustomPreloaderService,
-    SQLite,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

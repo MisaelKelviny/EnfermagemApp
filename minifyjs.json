@@ -1,0 +1,21 @@
+{
+    // Folders that are going to be processed.
+    "foldersToProcess": [
+      "js",
+      "css",
+      "img"
+    ],
+    "jpgOptions":{
+      "quality": 50
+    },
+    "jsOptions": {
+      "compress": {
+        "drop_console": true
+      }
+    },
+    "cssOptions": {
+      "keepSpecialComments": 0
+    },
+    "alwaysRun": false, // Set to true if you want the hook to always run.
+    "showErrStack": false // Set to true to show the error stack when a file fails to minify/compress.
+  }
