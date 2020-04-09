@@ -9,12 +9,6 @@
   "prefer_related_applications": true, 
   "icons": [
     {
-      "src": "assets/icons/background.png",
-      "sizes": "96x96",
-      "type": "image/png",
-      "purpose": "maskable"
-    },
-    {
       "src": "assets/icons/icon-72x72.png",
       "sizes": "72x72",
       "type": "image/png"
