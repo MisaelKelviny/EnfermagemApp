@@ -14,6 +14,8 @@ import { CreditModalPageModule } from './credit-modal/credit-modal.module';
 import { QuestionPagePageModule } from './question-page/question-page.module';
 import { IonicStorageModule } from '@ionic/storage';
 import { CustomersModule } from './customers/customers.module';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -33,6 +35,8 @@ import { CustomersModule } from './customers/customers.module';
   ],
   providers: [
     AppCustomPreloaderService,
+    StatusBar,
+    SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
