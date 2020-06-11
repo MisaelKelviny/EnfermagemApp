@@ -2,37 +2,75 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8"/>
-  <title>Ionic App</title>
+  <meta charset="utf-8" />
+  <title>Cartilha Sífilis</title>
 
-  <base href="/"/>
+  <base href="/" />
 
-  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-  <meta name="format-detection" content="telephone=no"/>
-  <meta name="msapplication-tap-highlight" content="no"/>
-  
+  <meta name="viewport"
+    content="viewport-fit=cover, width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
 
-  <link rel="icon" type="image/png" href="assets/icon/favicon.png"/>
+
+
+  <link rel="icon" type="image/png" href="assets/icon/favicon.png" />
 
   <!-- add to homescreen for ios -->
-  <meta name="apple-mobile-web-app-capable" content="yes"/>
-  <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+  <link rel="apple-touch-icon" href="assets/icons/icon-192x192.png">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#1976d2">
+  <meta name="theme-color" content="#d24a7d">
 </head>
-<!-- <script>
+
+<script>
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('service-worker.js').then(function (registration) {
+    navigator.serviceWorker.register('../ngsw-worker.js').then(function (registration) {
       console.log('Service Worker registered');
     }).catch(function (err) {
       console.log('Service Worker registration failed: ', err);
     });
+    navigator.serviceWorker.getRegistrations().then(function (registrations) {
+      for (let registration of registrations) {
+        console.log('registration', registration)
+        registration.unregister()
+      }
+    });
   }
-</script> -->
+</script>
+<script>
+  let deferredPrompt;
+
+  window.addEventListener('beforeinstallprompt', function (event) {
+    // Prevent Chrome 67 and earlier from automatically showing the prompt
+    e.preventDefault();
+    // Stash the event so it can be triggered later.
+    deferredPrompt = e;
+  });
+
+  // Installation must be done by a user gesture! Here, the button click
+  btnAdd.addEventListener('click', (e) => {
+    // hide our user interface that shows our A2HS button
+    btnAdd.style.display = 'none';
+    // Show the prompt
+    deferredPrompt.prompt();
+    // Wait for the user to respond to the prompt
+    deferredPrompt.userChoice
+      .then((choiceResult) => {
+        if (choiceResult.outcome === 'accepted') {
+          console.log('User accepted the A2HS prompt');
+        } else {
+          console.log('User dismissed the A2HS prompt');
+        }
+        deferredPrompt = null;
+      });
+  });
+
+</script>
 
 <body>
   <app-root></app-root>
-  <noscript>Please enable JavaScript to continue using this application.</noscript>
 </body>
 
 </html>

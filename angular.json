@@ -54,6 +54,8 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
+              "serviceWorker": true,
+              "ngswConfigPath": "ngsw-config.json",
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -69,8 +71,7 @@
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
                 }
-              ],
-              "serviceWorker": true
+              ]
             },
             "ci": {
               "progress": false
